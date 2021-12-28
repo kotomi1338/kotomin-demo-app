@@ -34,8 +34,8 @@ const App = () => {
     <Container>
       <PageTitle>申告な問題が発生しました</PageTitle>
       <AddTask tasks={tasks} getTasksData={getTasksData}/>
-      <h3>サボったリスト</h3>
-      <hr/>
+      <SubTitle>サボったリスト</SubTitle>
+      <Hr/>
       {tasks.sort((a, b) => b.id - a.id).map(task => {
         return (
           <Task task={task}/>
@@ -46,6 +46,15 @@ const App = () => {
 }
 
 // styled-components
+const SubTitle = styled.h3`
+  margin: 0;
+`
+
+const Hr = styled.hr`
+  border-width: 2px 0 0 0;
+  border-style: dashed;
+  border-color: #22ac38;
+`
 
 const Container = styled.div`
   width: 980px;
