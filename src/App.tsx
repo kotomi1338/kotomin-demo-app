@@ -34,7 +34,7 @@ const App = () => {
     <Container>
       <PageTitle>申告な問題が発生しました</PageTitle>
       <AddTask tasks={tasks} getTasksData={getTasksData}/>
-      <SubTitle>サボったリスト</SubTitle>
+      <SubTitle>サボった人からのコメント</SubTitle>
       <Hr/>
       {tasks.sort((a, b) => b.id - a.id).map(task => {
         return (
