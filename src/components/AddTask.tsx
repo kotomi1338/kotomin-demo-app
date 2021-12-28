@@ -40,6 +40,9 @@ const AddTask = (props) => {
     })
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
+      setInputUser('')
+      setInputName('')
+      setInputDescription('')
       setIsAddTask(true)
     })
     .catch((error) => {
@@ -55,15 +58,15 @@ const AddTask = (props) => {
       <FormWrapper>
         <Label>
           <p>お名前</p>
-          <Input type="text" name="user" onChange={getUser}/>
+          <Input type="text" name="user" value={inputUser} onChange={getUser}/>
         </Label>
         <Label>
           <p>なにしてたとき</p>
-          <Input type="text" name="name" onChange={getName}/>
+          <Input type="text" name="name" value={inputName} onChange={getName}/>
         </Label>
         <Label>
           <p>なんでサボったの？</p>
-          <Textarea name="description" onChange={getDescription}/>
+          <Textarea name="description" value={inputDescription} onChange={getDescription}/>
         </Label>
         <ButtonWrapper>
           <SubmitButton type="button" onClick={addTaskData} value="申告する" />
